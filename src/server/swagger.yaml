@@ -1,0 +1,131 @@
+openapi: 3.0.0
+info:
+  title: ÉcoRénov API
+  version: '1.0'
+  description: API for managing energy renovation eligibility checks
+servers:
+  - url: http://localhost:3000/api/v1
+    description: Local development server
+paths:
+  /eligibility:
+    get:
+      summary: Get all eligibility checks
+      tags:
+        - Eligibility
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: List of eligibility checks
+        '401':
+          description: Unauthorized
+    post:
+      summary: Create new eligibility check
+      tags:
+        - Eligibility
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EligibilityCheck'
+      responses:
+        '201':
+          description: Eligibility check created
+        '400':
+          description: Invalid input
+        '401':
+          description: Unauthorized
+  /eligibility/{id}:
+    get:
+      summary: Get single eligibility check
+      tags:
+        - Eligibility
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Eligibility check details
+        '404':
+          description: Not found
+    put:
+      summary: Update eligibility check
+      tags:
+        - Eligibility
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EligibilityCheck'
+      responses:
+        '200':
+          description: Eligibility check updated
+        '400':
+          description: Invalid input
+        '404':
+          description: Not found
+    delete:
+      summary: Delete eligibility check
+      tags:
+        - Eligibility
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Eligibility check deleted
+        '404':
+          description: Not found
+components:
+  schemas:
+    EligibilityCheck:
+      type: object
+      required:
+        - userStatus
+        - housingType
+        - renovationType
+        - incomeLevel
+        - postalCode
+      properties:
+        userStatus:
+          type: string
+          enum: [proprietaire, locataire]
+        housingType:
+          type: string
+          enum: [maison, appartement]
+        renovationType:
+          type: string
+          enum: [chauffage, isolation, fenetres, multiple]
+        incomeLevel:
+          type: string
+          enum: [tres_modeste, modeste, intermediaire, superieur]
+        postalCode:
+          type: string
+          pattern: '^\d{5}$'
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

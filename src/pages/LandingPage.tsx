@@ -13,7 +13,7 @@ import DepartmentMap from "../components/map/DepartmentMap";
 import TestimonialSlider from "../components/testimonials/TestimonialSlider";
 import NavigationObserver from "../components/navigation/NavigationObserver";
 import SectionNav from "../components/navigation/SectionNav";
-import { scrollToHash } from "../utils/scroll";
+import { scrollToHash } from "../components/utils/scroll";
 
 const sections = [
   { id: "hero", label: "Accueil" },

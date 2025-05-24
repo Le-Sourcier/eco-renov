@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Home } from "lucide-react";
+import { Menu, X, Home, FileText } from "lucide-react";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -98,6 +98,18 @@ const Header: React.FC = () => {
               aria-current={isActive("/contact") ? "page" : undefined}
             >
               Contact
+            </Link>
+
+            <Link
+              to="/access"
+              className={`text-sm font-medium flex items-center ${
+                isActive("/access")
+                  ? "text-primary"
+                  : "text-gray-600 hover:text-primary"
+              }`}
+            >
+              <FileText size={16} className="mr-1" />
+              Mes demandes
             </Link>
             <Link
               to="/start"

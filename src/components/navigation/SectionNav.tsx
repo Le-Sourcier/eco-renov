@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { scrollToSection } from '../../utils/scroll';
+import React from "react";
+import { Link } from "react-router-dom";
+import { scrollToSection } from "../utils/scroll";
 
 interface Section {
   id: string;
@@ -25,17 +25,23 @@ const SectionNav: React.FC<Props> = ({ sections, activeSection }) => {
                 scrollToSection(section.id);
               }}
               className={`flex items-center group transition-all duration-300 ${
-                activeSection === section.id ? 'text-primary' : 'text-gray-400'
+                activeSection === section.id ? "text-primary" : "text-gray-400"
               }`}
             >
-              <span className={`w-2 h-2 rounded-full mr-2 transition-all duration-300 ${
-                activeSection === section.id 
-                  ? 'bg-primary scale-150' 
-                  : 'bg-gray-300 group-hover:bg-gray-400'
-              }`} />
-              <span className={`opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm ${
-                activeSection === section.id ? 'text-primary' : 'text-gray-600'
-              }`}>
+              <span
+                className={`w-2 h-2 rounded-full mr-2 transition-all duration-300 ${
+                  activeSection === section.id
+                    ? "bg-primary scale-150"
+                    : "bg-gray-300 group-hover:bg-gray-400"
+                }`}
+              />
+              <span
+                className={`opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm ${
+                  activeSection === section.id
+                    ? "text-primary"
+                    : "text-gray-600"
+                }`}
+              >
                 {section.label}
               </span>
             </Link>
