@@ -109,10 +109,10 @@ const ContactPage: React.FC = () => {
                   <div>
                     <h3 className="font-bold mb-1">Email</h3>
                     <a
-                      href="mailto:contact@ecorenov.fr"
+                      href="mailto:contact@ecosubvention.fr"
                       className="text-gray-600 hover:text-primary transition-colors"
                     >
-                      contact@ecorenov.fr
+                      contact@ecosubvention.fr
                     </a>
                   </div>
                 </div>

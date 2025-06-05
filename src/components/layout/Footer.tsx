@@ -135,10 +135,10 @@ const Footer: React.FC = () => {
                   aria-hidden="true"
                 />
                 <a
-                  href="mailto:contact@ecorenov.fr"
+                  href="mailto:contact@ecosubvention.fr"
                   className="hover:text-secondary transition-colors duration-300"
                 >
-                  contact@ecorenov.fr
+                  contact@ecosubvention.fr
                 </a>
               </li>
             </ul>
