@@ -207,10 +207,7 @@ const FAQPage: React.FC = () => {
                 <Phone size={20} className="mr-2" />
                 Nous appeler
               </a>
-              <a
-                href="mailto:contact@ecosubvention.fr"
-                className="btn btn-outline"
-              >
+              <a href="mailto:contact@ecorenov.fr" className="btn btn-outline">
                 <Mail size={20} className="mr-2" />
                 Nous écrire
               </a>

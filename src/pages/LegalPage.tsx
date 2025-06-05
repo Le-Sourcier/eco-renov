@@ -50,7 +50,7 @@ const LegalPage: React.FC = () => {
           <p className="mb-4">
             <strong>Directeur de la publication :</strong> Marie Laurent
             <br />
-            <strong>Contact :</strong> direction@ecosubvention.fr
+            <strong>Contact :</strong> direction@ecorenov.fr
           </p>
 
           <h2 className="text-xl font-semibold text-primary mt-6 mb-3">
@@ -87,7 +87,7 @@ const LegalPage: React.FC = () => {
           <p className="mb-4">
             Pour exercer ces droits, contactez notre Délégué à la Protection des
             Données :<br />
-            <strong>Email :</strong> dpo@ecosubvention.fr
+            <strong>Email :</strong> dpo@ecorenov.fr
             <br />
             <strong>Adresse :</strong> 123 Avenue de l'Écologie, 75000 Paris
           </p>
@@ -121,7 +121,7 @@ const LegalPage: React.FC = () => {
           <p className="mb-4">
             Pour toute question concernant ces mentions légales, contactez-nous
             :<br />
-            <strong>Email :</strong> contact@ecosubvention.fr
+            <strong>Email :</strong> contact@ecorenov.fr
             <br />
             <strong>Téléphone :</strong> +33 (0)1 23 45 67 89
             <br />

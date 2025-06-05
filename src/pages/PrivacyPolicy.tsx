@@ -103,10 +103,10 @@ const PrivacyPolicy: React.FC = () => {
           <p className="mb-4">
             Pour exercer ces droits, contactez-nous à{" "}
             <a
-              href="mailto:privacy@ecosubvention.fr"
+              href="mailto:privacy@ecorenov.fr"
               className="text-primary hover:underline"
             >
-              privacy@ecosubvention.fr
+              privacy@ecorenov.fr
             </a>
             .
           </p>
@@ -145,10 +145,10 @@ const PrivacyPolicy: React.FC = () => {
             Pour toute question concernant cette politique, contactez notre
             Délégué à la Protection des Données à{" "}
             <a
-              href="mailto:dpo@ecosubvention.fr"
+              href="mailto:dpo@ecorenov.fr"
               className="text-primary hover:underline"
             >
-              dpo@ecosubvention.fr
+              dpo@ecorenov.fr
             </a>
             .
           </p>
