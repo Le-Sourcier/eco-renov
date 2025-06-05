@@ -115,7 +115,7 @@ const SummaryCard: React.FC = () => {
             <MapPin size={20} className="text-primary mr-2" />
             <div>
               <p className="text-sm text-gray-500">Code postal</p>
-              <p className="font-medium">{userData.postalCode}</p>
+              <p className="font-medium">{userData?.postalCode}</p>
             </div>
           </div>
           <div className="flex items-center">

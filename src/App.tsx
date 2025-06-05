@@ -23,6 +23,8 @@ import AccessRequestsPage from "./pages/AccessRequestsPage";
 import DashboardPage from "./pages/DashboardPage";
 import ReportDetailPage from "./pages/ReportDetailPage";
 import { ChatProvider } from "./components/providers/ChatProvider";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
+import NotFound from "./pages/NotFound";
 
 // Composant pour gérer le scroll au changement de route
 const ScrollToTopOnMount = () => {
@@ -46,6 +48,15 @@ function App() {
           <Header />
           <main className="flex-grow">
             <Routes>
+              {/* Protected dashboard */}
+              <Route
+                path="/dashboard"
+                element={
+                  <ProtectedRoute>
+                    <DashboardPage />
+                  </ProtectedRoute>
+                }
+              />
               <Route path="/" element={<LandingPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
@@ -57,11 +68,13 @@ function App() {
                 element={<ReportDetailPage />}
               />
               <Route path="/appointment" element={<AppointmentPage />} />
-              <Route path="/dashboard" element={<DashboardPage />} />
+              {/* <Route path="/dashboard" element={<DashboardPage />} /> */}
               <Route path="/access" element={<AccessRequestsPage />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<TermsPage />} />
               <Route path="/mentions-legales" element={<LegalPage />} />
+              {/* 404 */}
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
           <Footer />

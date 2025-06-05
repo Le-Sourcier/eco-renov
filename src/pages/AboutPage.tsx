@@ -4,13 +4,13 @@ import { ArrowRight, Award, Users, Clock, Target } from "lucide-react";
 
 const AboutPage: React.FC = () => {
   useEffect(() => {
-    document.title = "À propos | ÉcoRénov";
+    document.title = "À propos | Éco Subvention";
   }, []);
 
   return (
     <div className="">
       {/* Hero Section */}
-      <section id="mission" className="bg-primary text-white py-16">
+      <section id="mission" className="bg-primary text-white py-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

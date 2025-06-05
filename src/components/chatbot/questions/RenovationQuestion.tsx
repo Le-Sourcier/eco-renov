@@ -1,12 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useChat } from "../../context/ChatContext";
 import {
   Flame,
   Layers,
   AppWindowIcon as WindowIcon,
   ListChecks,
 } from "lucide-react";
+import { useChat } from "../../useChat";
 
 const RenovationQuestion: React.FC = () => {
   const { renovationType, setRenovationType } = useChat();

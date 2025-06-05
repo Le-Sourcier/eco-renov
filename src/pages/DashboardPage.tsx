@@ -46,13 +46,13 @@ const DashboardPage: React.FC = () => {
   const navigator = useNavigate();
 
   useEffect(() => {
-    document.title = "Tableau de bord | ÉcoRénov";
+    document.title = "Tableau de bord | Éco Subvention";
   }, []);
 
   return (
-    <div className="pt-16">
-      <section className="bg-primary text-white py-12">
-        <div className="container mx-auto px-4">
+    <div className="pt-">
+      <section className="bg-primary text-white py-20">
+        <div className="container mx-auto px-4 pt-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -60,7 +60,7 @@ const DashboardPage: React.FC = () => {
             className="max-w-4xl mx-auto"
           >
             <h1 className="text-3xl font-bold mb-2">
-              Bonjour, {userData.firstName}
+              Bonjour, {userData?.firstName}
             </h1>
             <p className="text-gray-200">
               Suivez l'avancement de vos demandes d'analyse

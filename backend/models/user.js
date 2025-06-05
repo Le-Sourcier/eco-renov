@@ -24,10 +24,6 @@ const User = sequelize.define(
         isEmail: true,
       },
     },
-    // password: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    // },
     firstName: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -47,6 +43,21 @@ const User = sequelize.define(
     token: {
       type: DataTypes.STRING(512),
       allowNull: false,
+    },
+    acceptPhoneCall: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    },
+    acceptEmailing: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    },
+    acceptTerms: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
     },
   },
   {
@@ -97,6 +108,10 @@ User.prototype.generateTokens = function () {
   });
 
   return { accessToken, refreshToken };
+};
+
+User.prototype.generateOTP = () => {
+  return Math.floor(10000 + Math.random() * 90000).toString(); // "12345"
 };
 
 export default User;

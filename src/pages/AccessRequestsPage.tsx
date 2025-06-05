@@ -26,7 +26,7 @@ const AccessRequestsPage: React.FC = () => {
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
-    document.title = "Accéder à mes demandes | ÉcoRénov";
+    document.title = "Accéder à mes demandes | Éco Subvention";
   }, []);
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
@@ -105,8 +105,8 @@ const AccessRequestsPage: React.FC = () => {
   }
 
   return (
-    <div className="pt-16">
-      <section className="bg-primary text-white py-12">
+    <div className="pt">
+      <section className="bg-primary text-white py-24">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -194,6 +194,8 @@ const AccessRequestsPage: React.FC = () => {
                     </label>
                     <input
                       type="text"
+                      name="otp"
+                      autoComplete="one-time-code"
                       value={otp}
                       onChange={(e) => setOtp(e.target.value)}
                       className="form-control"
@@ -227,7 +229,9 @@ const AccessRequestsPage: React.FC = () => {
                     </label>
                     <input
                       type="email"
+                      name="email"
                       value={email}
+                      autoComplete="email"
                       onChange={(e) => setEmail(e.target.value)}
                       className="form-control"
                       placeholder="Entrez votre email"

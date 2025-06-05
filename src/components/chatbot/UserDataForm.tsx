@@ -16,23 +16,23 @@ const UserDataForm: React.FC = () => {
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
 
-    if (!userData.firstName.trim()) {
+    if (!userData?.firstName.trim()) {
       newErrors.firstName = "Le prénom est requis";
     }
 
-    if (!userData.email.trim()) {
+    if (!userData?.email.trim()) {
       newErrors.email = "L'email est requis";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userData.email)) {
       newErrors.email = "L'email est invalide";
     }
 
-    if (!userData.phone.trim()) {
+    if (!userData?.phone.trim()) {
       newErrors.phone = "Le téléphone est requis";
     } else if (!/^(0|\+33)[1-9]([-. ]?[0-9]{2}){4}$/.test(userData.phone)) {
       newErrors.phone = "Le format du téléphone est invalide";
     }
 
-    if (!userData.postalCode.trim()) {
+    if (!userData?.postalCode.trim()) {
       newErrors.postalCode = "Le code postal est requis";
     } else if (!/^[0-9]{5}$/.test(userData.postalCode)) {
       newErrors.postalCode = "Le code postal doit contenir 5 chiffres";
@@ -54,12 +54,16 @@ const UserDataForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
+      if (!userData) return;
       // Simulate API call
       const res = await registreLead({
         firstName: userData.firstName,
         email: userData.email,
         phone: userData.phone,
         postalCode: userData.postalCode,
+        acceptPhoneCall: userData.acceptPhoneCall,
+        acceptEmailing: userData.acceptEmailing,
+        acceptTerms: userData.acceptTerms,
       });
 
       if (!res) {
@@ -151,7 +155,7 @@ const UserDataForm: React.FC = () => {
                   className={`form-control ${
                     errors.firstName ? "border-error" : ""
                   }`}
-                  value={userData.firstName}
+                  value={userData?.firstName}
                   onChange={(e) => setUserData({ firstName: e.target.value })}
                   placeholder="Entrez votre prénom"
                 />
@@ -170,7 +174,7 @@ const UserDataForm: React.FC = () => {
                   className={`form-control ${
                     errors.email ? "border-error" : ""
                   }`}
-                  value={userData.email}
+                  value={userData?.email}
                   onChange={(e) => setUserData({ email: e.target.value })}
                   placeholder="exemple@email.com"
                 />
@@ -189,7 +193,7 @@ const UserDataForm: React.FC = () => {
                   className={`form-control ${
                     errors.phone ? "border-error" : ""
                   }`}
-                  value={userData.phone}
+                  value={userData?.phone}
                   onChange={(e) => setUserData({ phone: e.target.value })}
                   placeholder="0612345678"
                 />
@@ -208,7 +212,7 @@ const UserDataForm: React.FC = () => {
                   className={`form-control ${
                     errors.postalCode ? "border-error" : ""
                   }`}
-                  value={userData.postalCode}
+                  value={userData?.postalCode}
                   onChange={(e) => setUserData({ postalCode: e.target.value })}
                   placeholder="75000"
                   maxLength={5}
@@ -223,11 +227,71 @@ const UserDataForm: React.FC = () => {
               <div className="flex items-start mb-4">
                 <input
                   type="checkbox"
-                  id="privacy"
+                  id="acceptPhoneCall"
+                  name="acceptPhoneCall"
+                  checked={userData?.acceptPhoneCall}
+                  onChange={(e) =>
+                    setUserData({
+                      ...userData,
+                      acceptPhoneCall: e.target.checked,
+                    })
+                  }
+                  className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary mt-1"
+                />
+                <label
+                  htmlFor="acceptPhoneCall"
+                  className="ml-2 text-sm text-gray-700"
+                >
+                  Dans le cadre de la RGPD, j'accepte d'être contacté(e) par
+                  téléphone par Eco Subvention.
+                </label>
+              </div>
+              <div className="flex items-start mb-4">
+                <input
+                  type="checkbox"
+                  id="acceptEmailing"
+                  name="acceptEmailing"
+                  checked={userData?.acceptEmailing}
+                  onChange={(e) =>
+                    setUserData({
+                      ...userData,
+                      acceptEmailing: e.target.checked,
+                    })
+                  }
+                  className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary mt-1"
+                />
+                <label
+                  htmlFor="acceptEmailing"
+                  className="ml-2 text-sm text-gray-700"
+                >
+                  Dans le cadre de la RGPD, j'accepte d'être contacté(e) par
+                  téléphone par Eco Subvention.
+                </label>
+              </div>
+              <textarea
+                readOnly
+                defaultValue={`En cliquant sur 'Obtenir mon rapport personnalisé', j'accepte que mes données personnelles, soient collectées par notre site pour réaliser une simulation personnalisée et me proposer des offres adaptées, soient traitées et, le cas échéant, transmises à des partenaires sélectionnés. J’ai été informé(e) que la fourniture de ces informations est facultative et que je dispose d’un droit d’accès, de rectification, de suppression, d’opposition et de retrait de consentement à tout moment. Pour plus d’informations, veuillez consulter notre Politique de Confidentialité.`}
+                className="py-2 w-full h-[150px] p-2 border text-gray-600 mb-2 border-gray-400 rounded-md "
+              />
+              <div className="flex items-start mb-4">
+                <input
+                  type="checkbox"
+                  id="acceptTerms"
+                  name="acceptTerms"
+                  checked={userData?.acceptTerms}
+                  onChange={(e) =>
+                    setUserData({
+                      ...userData,
+                      acceptTerms: e.target.checked,
+                    })
+                  }
                   className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary mt-1"
                   required
                 />
-                <label htmlFor="privacy" className="ml-2 text-sm text-gray-700">
+                <label
+                  htmlFor="acceptTerms"
+                  className="ml-2 text-sm text-gray-700"
+                >
                   J'accepte que mes données soient utilisées dans le cadre de ma
                   demande d'éligibilité conformément à la{" "}
                   <a href="/privacy" className="text-primary hover:underline">

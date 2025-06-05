@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useChat } from "../context/ChatContext";
 import { ArrowRight, Check } from "lucide-react";
 import StatusQuestion from "./questions/StatusQuestion";
 import HousingQuestion from "./questions/HousingQuestion";
@@ -8,6 +7,7 @@ import RenovationQuestion from "./questions/RenovationQuestion";
 import IncomeQuestion from "./questions/IncomeQuestion";
 import UserDataForm from "./UserDataForm";
 import { useEligibilityStore } from "../stores/useEligibilityChecker";
+import { useChat } from "../useChat";
 
 const ChatBot: React.FC = () => {
   const {

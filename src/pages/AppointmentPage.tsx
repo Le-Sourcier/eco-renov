@@ -11,10 +11,12 @@ import {
   Check,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEligibilityStore } from "../components/stores/useEligibilityChecker";
 
 const AppointmentPage: React.FC = () => {
+  const { user } = useEligibilityStore();
   useEffect(() => {
-    document.title = "Prendre rendez-vous | ÉcoRénov";
+    document.title = "Prendre rendez-vous | Éco Subvention";
   }, []);
 
   const [formData, setFormData] = useState({
@@ -76,7 +78,7 @@ const AppointmentPage: React.FC = () => {
 
   return (
     <div className="pt-16">
-      <section className="bg-primary text-white py-12">
+      <section className="bg-primary text-white py-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

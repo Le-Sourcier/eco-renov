@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/database.js";
 
-const EligibilityCheck = sequelize.define("EligibilityCheck", {
+const EligibilityCheck = sequelize.define("EligibilityChecks", {
   id: {
     type: DataTypes.UUID,
     defaultValue: DataTypes.UUIDV4,
@@ -14,6 +14,10 @@ const EligibilityCheck = sequelize.define("EligibilityCheck", {
       model: "Users",
       key: "id",
     },
+  },
+  ref: {
+    type: DataTypes.STRING,
+    allowNull: true,
   },
   userStatus: {
     type: DataTypes.ENUM("proprietaire", "locataire"),

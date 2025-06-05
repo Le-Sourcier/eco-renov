@@ -1,3 +1,12 @@
+export interface UserData {
+  firstName: string;
+  email: string;
+  phone: string;
+  postalCode: string;
+  acceptPhoneCall: boolean;
+  acceptEmailing: boolean;
+  acceptTerms: boolean;
+}
 // Define the types for our chat data
 export type UserStatus = "proprietaire" | "locataire" | "";
 export type HousingType = "maison" | "appartement" | "";
@@ -20,25 +29,13 @@ export interface ChatContextType {
   housingType: HousingType;
   renovationType: RenovationType;
   incomeLevel: IncomeLevel;
-  userData: {
-    firstName: string;
-    email: string;
-    phone: string;
-    postalCode: string;
-  };
+  userData: UserData | null;
   setStep: (step: number) => void;
   setUserStatus: (status: UserStatus) => void;
   setHousingType: (type: HousingType) => void;
   setRenovationType: (type: RenovationType) => void;
   setIncomeLevel: (level: IncomeLevel) => void;
-  setUserData: (
-    data: Partial<{
-      firstName: string;
-      email: string;
-      phone: string;
-      postalCode: string;
-    }>
-  ) => void;
+  setUserData: (data: Partial<UserData | null>) => void;
   analysisRequests: AnalysisRequest[];
   resetChat: () => void;
   generateReport: () => void;
@@ -53,13 +50,7 @@ export interface ChatContextType {
   verifyAccess: (reference: string) => Promise<boolean>;
   sendOTP: (email: string) => Promise<void>;
   verifyOTP: (email: string, code: string) => Promise<boolean>;
-}
-
-export interface UserData {
-  firstName: string;
-  email: string;
-  phone: string;
-  postalCode: string;
+  loading: boolean;
 }
 
 // Analysis request related types

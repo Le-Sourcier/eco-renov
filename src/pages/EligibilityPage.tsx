@@ -4,12 +4,12 @@ import ChatBot from "../components/chatbot/ChatBot";
 
 const EligibilityPage: React.FC = () => {
   useEffect(() => {
-    document.title = "Vérifier mon éligibilité | ÉcoRénov";
+    document.title = "Vérifier mon éligibilité | Éco Subvention";
   }, []);
 
   return (
     <div className="">
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-16">
+      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center">
             <motion.div

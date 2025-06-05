@@ -2,26 +2,27 @@ import jwt from "jsonwebtoken";
 // const db = require("../../models");
 
 import rateLimit from "express-rate-limit";
-import serverMessage from "./../utils/serverMessage.js";
+import serverMessage from "../utils/serverMessage.js";
 
-// const unprotectedRoutes = [
-//   "/api/user/login",
-//   "/api/user/register",
-//   "/api/user/refresh",
-//   "/api/user/guest",
-//   "/api/user/otp-login",
-//   "/api/chat/send-message",
-// ];
+const unprotectedRoutes = [
+  // "/api/user/login",
+  // "/api/user/register",
+  // "/api/user/refresh",
+  // "/api/user/guest",
+  // "/api/user/otp-login",
+  // "/api/chat/send-message",
+  "/api/v1/users/auth",
+];
 const authorize = async (req, res, next) => {
   // if (unprotectedRoutes.includes(req.originalUrl)) {
   //   return next(); // Pas besoin de JWT ici
   // }
   // console.log("REQUEST URL: ", req.originalUrl);
 
-  // const path = req.originalUrl.split("?")[0];
-  // if (unprotectedRoutes.includes(path)) {
-  //   return next();
-  // }
+  const path = req.originalUrl.split("?")[0];
+  if (unprotectedRoutes.includes(path)) {
+    return next();
+  }
   const authHeader = req.headers.authorization;
 
   if (!authHeader || !authHeader.startsWith("Bearer ")) {

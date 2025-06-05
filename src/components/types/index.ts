@@ -26,6 +26,9 @@ export type RegisterFormData = {
   email: string;
   phone: string;
   postalCode: string;
+  acceptPhoneCall: boolean;
+  acceptEmailing: boolean;
+  acceptTerms: boolean;
 };
 
 export type EligibilityState = {

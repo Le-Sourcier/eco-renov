@@ -14,7 +14,7 @@ const ContactPage: React.FC = () => {
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
   useEffect(() => {
-    document.title = "Contact | ÉcoRénov";
+    document.title = "Contact | Éco Subvention";
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -41,7 +41,7 @@ const ContactPage: React.FC = () => {
   return (
     <div className="">
       {/* Hero Section */}
-      <section className="bg-primary text-white py-16">
+      <section className="bg-primary text-white py-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -295,7 +295,7 @@ const ContactPage: React.FC = () => {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="ÉcoRénov Paris Location"
+              title="Éco Subvention Paris Location"
             ></iframe>
           </div>
         </div>

@@ -1,37 +1,20 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin,
-} from "lucide-react";
-import { scrollToSection } from "../utils/scroll";
+import { Link } from "react-router-dom";
+import { Mail } from "lucide-react";
 
 const Footer: React.FC = () => {
-  const location = useLocation();
-
-  const handleNavigation = (path: string, sectionId?: string) => {
-    if (location.pathname === path && sectionId) {
-      scrollToSection(sectionId);
-    }
-  };
-
   return (
     <footer className="bg-primary text-white pt-12 pb-6" role="contentinfo">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">ÉcoRénov</h3>
+            <h3 className="text-xl font-bold mb-4">Éco Subvention</h3>
             <p className="mb-4 text-gray-200">
               Simplifiez vos démarches pour la rénovation énergétique et trouvez
               les aides CEE auxquelles vous avez droit.
             </p>
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               <a
                 href="https://facebook.com"
                 target="_blank"
@@ -68,7 +51,7 @@ const Footer: React.FC = () => {
               >
                 <Linkedin size={20} aria-hidden="true" />
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
@@ -124,7 +107,7 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Contact</h3>
             <ul className="space-y-3">
-              <li className="flex items-start">
+              {/* <li className="flex items-start">
                 <MapPin
                   size={20}
                   className="mr-2 mt-1 flex-shrink-0 text-secondary"
@@ -144,7 +127,7 @@ const Footer: React.FC = () => {
                 >
                   +33 (0)1 23 45 67 89
                 </a>
-              </li>
+              </li> */}
               <li className="flex items-center">
                 <Mail
                   size={20}
@@ -192,7 +175,8 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-600 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="mb-4 md:mb-0 text-gray-300">
-              &copy; {new Date().getFullYear()} ÉcoRénov. Tous droits réservés.
+              &copy; {new Date().getFullYear()} Éco Subvention. Tous droits
+              réservés.
             </p>
             <nav>
               <ul className="flex flex-wrap justify-center space-x-4">

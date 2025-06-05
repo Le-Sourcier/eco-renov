@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useChat } from "../../context/ChatContext";
 import { Home, Building } from "lucide-react";
+import { useChat } from "../../useChat";
 
 const StatusQuestion: React.FC = () => {
   const { userStatus, setUserStatus } = useChat();

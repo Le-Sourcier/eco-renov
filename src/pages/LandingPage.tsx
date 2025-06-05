@@ -28,7 +28,8 @@ const LandingPage: React.FC = () => {
   const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
-    document.title = "ÉcoRénov - Vérifiez votre éligibilité aux aides CEE";
+    document.title =
+      "Éco Subvention - Vérifiez votre éligibilité aux aides CEE";
     scrollToHash();
   }, []);
 
@@ -43,7 +44,7 @@ const LandingPage: React.FC = () => {
       {/* Hero Section */}
       <section
         id="hero"
-        className="bg-gradient-to-br from-primary to-primary-dark text-white py-16"
+        className="bg-gradient-to-br from-primary to-primary-dark text-white py-20"
       >
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center">
@@ -334,29 +335,29 @@ const LandingPage: React.FC = () => {
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
             <div className="grayscale hover:grayscale-0 transition-all">
               <img
-                src="https://upload.wikimedia.org/wikipedia/fr/thumb/3/3e/Logo_Ministere_de_la_transition_ecologique_et_solidaire.png/640px-Logo_Ministere_de_la_transition_ecologique_et_solidaire.png"
-                alt="Ministère de la Transition Écologique"
-                className="h-16 object-contain"
+                src="/logo-CEE.png"
+                alt="Certificats d'économie d'énergie (CEE)"
+                className="h-20 object-contain"
               />
             </div>
 
             <div className="grayscale hover:grayscale-0 transition-all">
               <img
-                src="https://www.ademe.fr/wp-content/uploads/2020/03/logo-ademe.svg"
-                alt="ADEME"
-                className="h-12 object-contain"
+                src="/MaPrimeRenov.svg"
+                alt="MaPrimeRenov"
+                className="h-15 object-contain"
               />
             </div>
 
             <div className="grayscale hover:grayscale-0 transition-all">
               <img
-                src="https://www.cohesion-territoires.gouv.fr/sites/default/files/2019-09/logoANAH.jpg"
-                alt="ANAH"
-                className="h-10 object-contain"
+                src="/logo_rge_qualibat.svg"
+                alt="RGE Qualibat"
+                className="h-14 object-contain"
               />
             </div>
 
-            <div className="grayscale hover:grayscale-0 transition-all">
+            <div hidden className="grayscale hover:grayscale-0 transition-all">
               <img
                 src="https://upload.wikimedia.org/wikipedia/fr/thumb/3/36/Logo_RGE.png/640px-Logo_RGE.png"
                 alt="RGE"

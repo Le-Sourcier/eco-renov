@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: ÉcoRénov API
+  title: Éco Subvention API
   version: '1.0'
   description: API for managing energy renovation eligibility checks
 servers:

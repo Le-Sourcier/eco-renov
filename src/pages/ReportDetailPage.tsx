@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { Download, Printer, Share2, CheckCircle2 } from "lucide-react";
 import SummaryCard from "../components/cards/SummaryCard";
 import { useChat } from "../components/useChat";
+import LoadingSpinner from "../components/ui/loadingSpinner";
 
 const ReportDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -10,7 +11,7 @@ const ReportDetailPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    document.title = "Votre Rapport Personnalisé | ÉcoRénov";
+    document.title = "Votre Rapport Personnalisé | Éco Subvention";
     const timer = setTimeout(() => {
       setLoading(false);
     }, 1500);
@@ -19,16 +20,7 @@ const ReportDetailPage: React.FC = () => {
   }, []);
 
   if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-primary mx-auto mb-4"></div>
-          <h2 className="text-xl font-semibold text-primary">
-            Chargement de votre rapport personnalisé...
-          </h2>
-        </div>
-      </div>
-    );
+    return <LoadingSpinner />;
   }
 
   const localContractors = [
@@ -59,7 +51,7 @@ const ReportDetailPage: React.FC = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-20">
       <div className="text-center mb-6">
         <h1 className="text-3xl font-bold text-primary mb-2">
           Votre Rapport d'Éligibilité Personnalisé
@@ -92,7 +84,7 @@ const ReportDetailPage: React.FC = () => {
             <div className="flex items-center mb-4">
               <CheckCircle2 size={24} className="text-green-500 mr-2" />
               <h2 className="text-xl font-bold">
-                Félicitations, {userData.firstName} !
+                Félicitations, {userData?.firstName} !
               </h2>
             </div>
             <p className="text-gray-700 mb-4">

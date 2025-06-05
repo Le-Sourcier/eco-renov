@@ -18,7 +18,7 @@ const ReportPage: React.FC = () => {
   const [requestId, setRequestId] = useState<string | null>(null);
 
   useEffect(() => {
-    document.title = "Votre Rapport Personnalisé | ÉcoRénov";
+    document.title = "Votre Rapport Personnalisé | Éco Subvention";
     const timer = setTimeout(() => {
       setLoading(false);
     }, 1500);
@@ -52,7 +52,7 @@ const ReportPage: React.FC = () => {
     : null;
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-20">
       <div className="text-center mb-6">
         <h1 className="text-3xl font-bold text-primary mb-2">
           Votre Rapport d'Éligibilité Personnalisé
@@ -68,7 +68,7 @@ const ReportPage: React.FC = () => {
             <CheckCircle2 size={32} className="text-primary mr-3" />
             <div>
               <h2 className="text-2xl font-bold">
-                Félicitations, {userData.firstName} !
+                Félicitations, {userData?.firstName} !
               </h2>
               <p className="text-gray-600">
                 Votre dossier est éligible pour une analyse détaillée.

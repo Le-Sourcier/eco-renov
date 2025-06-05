@@ -20,8 +20,10 @@ const userValidation = [
 
 router
   .get("/", ctrl.getAll) // Get all users associated to the connected user
-  .get("/:id", ctrl.get) // Get single user
+  .get("/me", ctrl.get) // Get single user
   .post("/register-lead", validate(userValidation), ctrl.create) // Create a new user based on EligibilityCheck
+  .post("/auth", ctrl.auth) // Authenticate user with email + otp or ecoRef code
+  .put("subscribe", ctrl.subscribe) // Subscribe user to newsletter
   .put("/:id", validate(userValidation), ctrl.update) // Update user
   .delete("/:id", ctrl.delete); // Delete user
 

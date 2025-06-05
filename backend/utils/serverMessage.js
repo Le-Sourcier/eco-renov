@@ -21,6 +21,9 @@ const serverMessage = (res, key, data = []) => {
     case "PASSWORD_CHANGE_FAILED":
     case "ENRICHMENT_FAILED":
     case "METHOD_NOT_ALLOWED":
+    case "INVALID_OTP":
+    case "INVALID_STEP":
+    case "INVALID_ECOREF":
       error = true;
       status = 400; // Bad Request
       break;
@@ -42,7 +45,9 @@ const serverMessage = (res, key, data = []) => {
     case "ACCOUNT_ARCHIVED":
     case "ACCOUNT_UNVERIFIED":
     case "OTP_SENDING_FAILED":
-    case "OTP_INVALID_ORR_EXPIRED":
+    case "OTP_EXPIRED_OR_INVALID":
+    case "INVALID_CODE_FORMAT":
+    case "INVALID_CODE":
     case " RESOURCE_CONFLICT":
       error = true;
       status = 403; // Forbidden - Le serveur comprend la requête mais refuse de l'exécuter
@@ -81,6 +86,7 @@ const serverMessage = (res, key, data = []) => {
 
     // Autres succès (2xx) - réponses générales pour actions réussies
     case "SUCCESS":
+    case "AUTH_SUCCESS":
     case "NEXT_STEP":
     case "LOGIN_SUCCESS":
     case "LOGOUT_SUCCESS":

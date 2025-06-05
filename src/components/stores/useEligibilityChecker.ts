@@ -8,7 +8,7 @@ import {
   RegisterFormData,
 } from "../types";
 import sec from "react-secure-storage";
-const BASE_URL = import.meta.env.VITE_API_URL + "/v1";
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 export const useEligibilityStore = create<EligibilityState>((set) => ({
   user: null,
@@ -35,7 +35,7 @@ export const useEligibilityStore = create<EligibilityState>((set) => ({
       });
       return data;
     } catch (err) {
-      console.log("Error checking eligibility:", err);
+      // console.log("Error checking eligibility:", err);
       set({
         error: (err as Error).message,
         isLoading: false,

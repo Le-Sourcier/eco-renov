@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useChat } from "../../context/ChatContext";
 import { EuroIcon } from "lucide-react";
+import { useChat } from "../../useChat";
 
 const IncomeQuestion: React.FC = () => {
   const { incomeLevel, setIncomeLevel } = useChat();
