@@ -69,7 +69,6 @@ function App() {
                 element={<ReportDetailPage />}
               />
               <Route path="/appointment" element={<AppointmentPage />} />
-              {/* <Route path="/dashboard" element={<DashboardPage />} /> */}
               <Route path="/access" element={<AccessRequestsPage />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<TermsPage />} />

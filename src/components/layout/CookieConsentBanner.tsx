@@ -16,8 +16,8 @@ const CookieConsentBanner: React.FC = () => {
   const [marketingAccepted, setMarketingAccepted] = useState(false);
 
   useEffect(() => {
-    let timerId: NodeJS.Timeout;
-    const storedConsentState = localStorage.getItem('cookieConsentState');
+    let timerId: NodeJS.Timeout | null = null;
+    const storedConsentState = localStorage.getItem("cookieConsentState");
 
     if (storedConsentState) {
       try {
@@ -51,7 +51,10 @@ const CookieConsentBanner: React.FC = () => {
       marketing: true,
       consented: true,
     };
-    localStorage.setItem('cookieConsentState', JSON.stringify(preferencesToSave));
+    localStorage.setItem(
+      "cookieConsentState",
+      JSON.stringify(preferencesToSave)
+    );
     setAnalyticsAccepted(true);
     setMarketingAccepted(true);
     setShowBanner(false);
@@ -64,7 +67,10 @@ const CookieConsentBanner: React.FC = () => {
       marketing: marketingAccepted,
       consented: true,
     };
-    localStorage.setItem('cookieConsentState', JSON.stringify(preferencesToSave));
+    localStorage.setItem(
+      "cookieConsentState",
+      JSON.stringify(preferencesToSave)
+    );
     setShowBanner(false);
   };
 
@@ -84,21 +90,24 @@ const CookieConsentBanner: React.FC = () => {
       {/* Removed inner container mx-auto. Padding is handled by the parent. */}
       <div className="flex items-center mb-4">
         <Cookie size={28} className="text-primary mr-3 flex-shrink-0" />
-        <h2 className="text-xl font-semibold text-primary">Gestion des cookies</h2>
+        <h2 className="text-xl font-semibold text-primary">
+          Gestion des cookies
+        </h2>
       </div>
 
       <p className="text-text-secondary text-sm mb-4">
-        Nous utilisons des cookies pour améliorer votre expérience sur notre site.
-        Vous pouvez choisir les types de cookies que vous autorisez. Pour en savoir plus, consultez notre{" "}
-        <Link
-          to="/privacy"
-          className="text-secondary hover:underline"
-        >
+        Nous utilisons des cookies pour améliorer votre expérience sur notre
+        site. Vous pouvez choisir les types de cookies que vous autorisez. Pour
+        en savoir plus, consultez notre{" "}
+        <Link to="/privacy" className="text-secondary hover:underline">
           politique de confidentialité
-        </Link>.
+        </Link>
+        .
       </p>
 
-      <div className="space-y-3 mb-6"> {/* Adjusted space-y for tighter packing if needed */}
+      <div className="space-y-3 mb-6">
+        {" "}
+        {/* Adjusted space-y for tighter packing if needed */}
         {/* Nécessaires */}
         <div className="flex items-start space-x-3">
           <input
@@ -109,13 +118,18 @@ const CookieConsentBanner: React.FC = () => {
             disabled
           />
           <div>
-            <label htmlFor="cookies-necessary" className="font-medium text-text-primary text-sm cursor-pointer">Nécessaires</label>
+            <label
+              htmlFor="cookies-necessary"
+              className="font-medium text-text-primary text-sm cursor-pointer"
+            >
+              Nécessaires
+            </label>
             <p className="text-xs text-text-secondary mt-1">
-              Ces cookies sont essentiels au fonctionnement du site et ne peuvent pas être désactivés.
+              Ces cookies sont essentiels au fonctionnement du site et ne
+              peuvent pas être désactivés.
             </p>
           </div>
         </div>
-
         {/* Analytiques */}
         <div className="flex items-start space-x-3">
           <input
@@ -126,13 +140,18 @@ const CookieConsentBanner: React.FC = () => {
             onChange={() => setAnalyticsAccepted(!analyticsAccepted)}
           />
           <div>
-            <label htmlFor="cookies-analytics" className="font-medium text-text-primary text-sm cursor-pointer">Analytiques</label>
+            <label
+              htmlFor="cookies-analytics"
+              className="font-medium text-text-primary text-sm cursor-pointer"
+            >
+              Analytiques
+            </label>
             <p className="text-xs text-text-secondary mt-1">
-              Ces cookies nous aident à comprendre comment les visiteurs interagissent avec le site.
+              Ces cookies nous aident à comprendre comment les visiteurs
+              interagissent avec le site.
             </p>
           </div>
         </div>
-
         {/* Marketing */}
         <div className="flex items-start space-x-3">
           <input
@@ -143,9 +162,15 @@ const CookieConsentBanner: React.FC = () => {
             onChange={() => setMarketingAccepted(!marketingAccepted)}
           />
           <div>
-            <label htmlFor="cookies-marketing" className="font-medium text-text-primary text-sm cursor-pointer">Marketing</label>
+            <label
+              htmlFor="cookies-marketing"
+              className="font-medium text-text-primary text-sm cursor-pointer"
+            >
+              Marketing
+            </label>
             <p className="text-xs text-text-secondary mt-1">
-              Ces cookies sont utilisés pour suivre les visiteurs et afficher des publicités pertinentes.
+              Ces cookies sont utilisés pour suivre les visiteurs et afficher
+              des publicités pertinentes.
             </p>
           </div>
         </div>
@@ -165,7 +190,7 @@ const CookieConsentBanner: React.FC = () => {
           Tout accepter
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
