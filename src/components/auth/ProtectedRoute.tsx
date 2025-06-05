@@ -17,7 +17,9 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
       </div>
     );
   }
-  if (!user) {
+
+  // console.log("USER: ", user);
+  if (!user || !user.email) {
     return <Navigate to="/access" replace />;
   }
 

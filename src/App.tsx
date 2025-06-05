@@ -17,6 +17,7 @@ import LegalPage from "./pages/LegalPage";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import ScrollToTop from "./components/navigation/ScrollToTop";
+import CookieConsentBanner from "./components/layout/CookieConsentBanner";
 import "./App.css";
 import AppointmentPage from "./pages/AppointmentPage";
 import AccessRequestsPage from "./pages/AccessRequestsPage";
@@ -68,7 +69,6 @@ function App() {
                 element={<ReportDetailPage />}
               />
               <Route path="/appointment" element={<AppointmentPage />} />
-              {/* <Route path="/dashboard" element={<DashboardPage />} /> */}
               <Route path="/access" element={<AccessRequestsPage />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<TermsPage />} />
@@ -79,6 +79,7 @@ function App() {
           </main>
           <Footer />
           <ScrollToTop />
+          <CookieConsentBanner />
         </div>
       </ChatProvider>
     </Router>

@@ -4,13 +4,13 @@ import { Mail } from "lucide-react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-primary text-white pt-12 pb-6" role="contentinfo">
+    <footer className="bg-neutral-800 text-neutral-200 pt-12 pb-6" role="contentinfo">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Éco Subvention</h3>
-            <p className="mb-4 text-gray-200">
+            <h3 className="text-xl font-bold mb-4 text-white">Éco Subvention</h3>
+            <p className="mb-4 text-neutral-300">
               Simplifiez vos démarches pour la rénovation énergétique et trouvez
               les aides CEE auxquelles vous avez droit.
             </p>
@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Liens rapides</h3>
+            <h3 className="text-xl font-bold mb-4 text-white">Liens rapides</h3>
             <nav>
               <ul className="space-y-2">
                 <li>
@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Contact</h3>
+            <h3 className="text-xl font-bold mb-4 text-white">Contact</h3>
             <ul className="space-y-3">
               {/* <li className="flex items-start">
                 <MapPin
@@ -118,7 +118,7 @@ const Footer: React.FC = () => {
               <li className="flex items-center">
                 <Phone
                   size={20}
-                  className="mr-2 flex-shrink-0 text-secondary"
+                  className="mr-2 flex-shrink-0 text-secondary" // Lucide icon color, keep as new secondary (teal)
                   aria-hidden="true"
                 />
                 <a
@@ -146,8 +146,8 @@ const Footer: React.FC = () => {
 
           {/* Newsletter */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Restez informé</h3>
-            <p className="mb-4 text-gray-200">
+            <h3 className="text-xl font-bold mb-4 text-white">Restez informé</h3>
+            <p className="mb-4 text-neutral-300">
               Abonnez-vous à notre newsletter pour recevoir les dernières
               informations sur les aides à la rénovation énergétique.
             </p>
@@ -158,13 +158,13 @@ const Footer: React.FC = () => {
               <input
                 type="email"
                 placeholder="Votre email"
-                className="px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-secondary text-gray-800"
+                className="px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary bg-neutral-700 text-neutral-100 placeholder-neutral-400 border border-neutral-600"
                 aria-label="Adresse email pour la newsletter"
                 required
               />
               <button
                 type="submit"
-                className="bg-secondary hover:bg-secondary-dark transition-colors duration-300 px-4 py-2 rounded font-medium"
+                className="bg-secondary hover:bg-teal-600 transition-colors duration-300 text-white px-4 py-2 rounded-lg font-medium"
               >
                 S'abonner
               </button>
@@ -172,9 +172,9 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-600 mt-8 pt-6">
+        <div className="border-t border-neutral-700 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="mb-4 md:mb-0 text-gray-300">
+            <p className="mb-4 md:mb-0 text-neutral-300">
               &copy; {new Date().getFullYear()} Éco Subvention. Tous droits
               réservés.
             </p>
@@ -183,7 +183,7 @@ const Footer: React.FC = () => {
                 <li>
                   <Link
                     to="/privacy"
-                    className="text-gray-300 hover:text-secondary transition-colors duration-300"
+                    className="text-neutral-300 hover:text-secondary transition-colors duration-300"
                   >
                     Politique de confidentialité
                   </Link>
@@ -191,7 +191,7 @@ const Footer: React.FC = () => {
                 <li>
                   <Link
                     to="/terms"
-                    className="text-gray-300 hover:text-secondary transition-colors duration-300"
+                    className="text-neutral-300 hover:text-secondary transition-colors duration-300"
                   >
                     Conditions d'utilisation
                   </Link>
@@ -199,7 +199,7 @@ const Footer: React.FC = () => {
                 <li>
                   <Link
                     to="/mentions-legales"
-                    className="text-gray-300 hover:text-secondary transition-colors duration-300"
+                    className="text-neutral-300 hover:text-secondary transition-colors duration-300"
                   >
                     Mentions légales
                   </Link>
