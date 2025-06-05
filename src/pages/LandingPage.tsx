@@ -75,21 +75,21 @@ const LandingPage: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <div className="flex items-center">
+                <div className="flex items-center mb-2">
                   <Check
                     size={20}
                     className="text-secondary mr-2 flex-shrink-0"
                   />
                   <span>Accompagnement personnalisé de A à Z</span>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center mb-2">
                   <Check
                     size={20}
                     className="text-secondary mr-2 flex-shrink-0"
                   />
                   <span>Artisans RGE qualifiés dans votre région</span>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center mb-2">
                   <Check
                     size={20}
                     className="text-secondary mr-2 flex-shrink-0"
@@ -145,7 +145,7 @@ const LandingPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="card">
+            <div className="card hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out">
               <div className="card-body">
                 <div className="bg-primary bg-opacity-10 p-3 rounded-full inline-flex mb-4">
                   <HelpCircle size={24} className="text-primary" />
@@ -153,7 +153,7 @@ const LandingPage: React.FC = () => {
                 <h3 className="text-xl font-bold mb-3 text-primary">
                   Accompagnement personnalisé
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 leading-relaxed">
                   Un conseiller dédié vous accompagne tout au long de votre
                   projet, de l'étude de faisabilité jusqu'à la réception des
                   travaux.
@@ -161,7 +161,7 @@ const LandingPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="card">
+            <div className="card hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out">
               <div className="card-body">
                 <div className="bg-primary bg-opacity-10 p-3 rounded-full inline-flex mb-4">
                   <BarChart3 size={24} className="text-primary" />
@@ -169,14 +169,14 @@ const LandingPage: React.FC = () => {
                 <h3 className="text-xl font-bold mb-3 text-primary">
                   Économies garanties
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 leading-relaxed">
                   Réduisez vos factures d'énergie grâce à des travaux financés
                   jusqu'à 90% par les aides CEE et MaPrimeRénov'.
                 </p>
               </div>
             </div>
 
-            <div className="card">
+            <div className="card hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out">
               <div className="card-body">
                 <div className="bg-primary bg-opacity-10 p-3 rounded-full inline-flex mb-4">
                   <BadgeCheck size={24} className="text-primary" />
@@ -184,7 +184,7 @@ const LandingPage: React.FC = () => {
                 <h3 className="text-xl font-bold mb-3 text-primary">
                   Artisans certifiés RGE
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 leading-relaxed">
                   Nos artisans partenaires sont tous certifiés RGE (Reconnu
                   Garant de l'Environnement), garantissant un travail de
                   qualité.
@@ -266,12 +266,12 @@ const LandingPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="card">
+            <div className="card hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out">
               <div className="card-body">
                 <h3 className="text-lg font-bold mb-2 text-primary">
                   Qu'est-ce que le dispositif CEE ?
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 leading-relaxed">
                   Le dispositif des Certificats d'Économies d'Énergie (CEE)
                   oblige les fournisseurs d'énergie à promouvoir des actions
                   d'économies d'énergie. Ils financent ainsi des travaux de
@@ -280,12 +280,12 @@ const LandingPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="card">
+            <div className="card hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out">
               <div className="card-body">
                 <h3 className="text-lg font-bold mb-2 text-primary">
                   Qui peut bénéficier des aides CEE ?
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 leading-relaxed">
                   Tous les propriétaires et locataires peuvent bénéficier des
                   aides CEE, sans condition de ressources. Le montant varie
                   selon vos revenus et le type de travaux réalisés.
@@ -293,12 +293,12 @@ const LandingPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="card">
+            <div className="card hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out">
               <div className="card-body">
                 <h3 className="text-lg font-bold mb-2 text-primary">
                   Quels travaux sont éligibles aux CEE ?
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 leading-relaxed">
                   Les travaux éligibles concernent principalement l'isolation
                   (combles, murs, sols), le chauffage (pompe à chaleur,
                   chaudière biomasse), les fenêtres et la ventilation.
@@ -306,12 +306,12 @@ const LandingPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="card">
+            <div className="card hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out">
               <div className="card-body">
                 <h3 className="text-lg font-bold mb-2 text-primary">
                   Comment sont versées les aides CEE ?
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 leading-relaxed">
                   Les aides CEE peuvent être versées sous forme de prime
                   directe, de bon d'achat, ou être directement déduites de vos
                   factures de travaux selon l'organisme financeur.
@@ -333,7 +333,7 @@ const LandingPage: React.FC = () => {
           </h2>
 
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            <div className="grayscale hover:grayscale-0 transition-all">
+            <div className="grayscale hover:grayscale-0 transition-all flex justify-center items-center">
               <img
                 src="/logo-CEE.png"
                 alt="Certificats d'économie d'énergie (CEE)"
@@ -341,27 +341,27 @@ const LandingPage: React.FC = () => {
               />
             </div>
 
-            <div className="grayscale hover:grayscale-0 transition-all">
+            <div className="grayscale hover:grayscale-0 transition-all flex justify-center items-center">
               <img
                 src="/MaPrimeRenov.svg"
                 alt="MaPrimeRenov"
-                className="h-15 object-contain"
+                className="h-20 object-contain"
               />
             </div>
 
-            <div className="grayscale hover:grayscale-0 transition-all">
+            <div className="grayscale hover:grayscale-0 transition-all flex justify-center items-center">
               <img
                 src="/logo_rge_qualibat.svg"
                 alt="RGE Qualibat"
-                className="h-14 object-contain"
+                className="h-20 object-contain"
               />
             </div>
 
-            <div hidden className="grayscale hover:grayscale-0 transition-all">
+            <div hidden className="grayscale hover:grayscale-0 transition-all flex justify-center items-center">
               <img
                 src="https://upload.wikimedia.org/wikipedia/fr/thumb/3/36/Logo_RGE.png/640px-Logo_RGE.png"
                 alt="RGE"
-                className="h-14 object-contain"
+                className="h-20 object-contain"
               />
             </div>
           </div>
