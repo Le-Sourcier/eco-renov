@@ -69,6 +69,15 @@ const LandingPage: React.FC = () => {
                 grâce aux Certificats d'Économies d'Énergie (CEE).
               </motion.p>
 
+              <motion.p
+                className="text-xl font-semibold text-secondary my-6" // Using new secondary (teal) and larger font
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.15 }} // Adjusted delay
+              >
+                Obtenez jusqu’à 10500€ de financement pour l'installation d'une pompe à chaleur !
+              </motion.p>
+
               <motion.div
                 className="space-y-4"
                 initial={{ opacity: 0, y: 20 }}
